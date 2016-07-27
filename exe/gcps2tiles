@@ -6,7 +6,7 @@ require 'thor'
 class CLI < Thor
 
   class_option :gdal_translate_path, default:'gdal_translate'
-  class_option :python_path, default:'python2.7'
+  class_option :python_path, default:'python'
   class_option :gdal2tiles_path, default:'gdal2tiles.py'
 
   method_option :image_file_path, required:true

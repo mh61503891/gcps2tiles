@@ -1,3 +1,3 @@
-module Gcps2tiles
-  VERSION = "0.1.0"
+module GCPS2TILES
+  VERSION = '0.0.1'
 end

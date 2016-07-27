@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'gcps2tiles'
+require 'thor'
+
+class CLI < Thor
+
+  class_option :gdal_translate_path, default:'gdal_translate'
+  class_option :python_path, default:'python2.7'
+  class_option :gdal2tiles_path, default:'gdal2tiles.py'
+
+  method_option :image_file_path, required:true
+  method_option :gcps_file_path, required:true
+  method_option :output_dir_path
+  desc 'generate', 'generator TMS (Tile Map Service) tiles from a image and its GCPs (Ground Control Points) '
+  def generate
+    GCPS2TILES.execute(options)
+  end
+
+end
+
+CLI.start(ARGV)

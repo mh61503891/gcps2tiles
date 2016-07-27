@@ -1,16 +1,34 @@
-# Gcps2tiles
+# gcps2tiles
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gcps2tiles`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
+## Dependencies
+
+1. GDAL
+  1. gdal_translate
+  2. gdalwarp
+  3. gdal2tiles.py
+	  4. python2.7
+2. proj
+  1. cs2cs
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
+
+```
+sudo port install proj
+gem install proj4rb -- --with-opt-include=/opt/local/include --with-opt-lib=/opt/local/lib
+```
+
 ```ruby
 gem 'gcps2tiles'
 ```
+
+
 
 And then execute:
 
@@ -38,4 +56,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

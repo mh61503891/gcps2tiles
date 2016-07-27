@@ -16,7 +16,8 @@ module GCPS2TILES
     image_file_path = options['image_file_path']
     vrt_file_path = Tempfile.open(File.basename(image_file_path, File.extname(image_file_path)) + '.vrt'){ |f| f.to_path }
     program = "#{gdal_translate_path} -of VRT #{gcps} #{image_file_path} #{vrt_file_path}"
-    puts '$ '+ program.colorize(:blue)
+    print 'run '.colorize(:blue)
+    puts program.colorize(:light_blue)
     status, = systemu(program)
     return vrt_file_path if status.success?
   end
@@ -27,7 +28,8 @@ module GCPS2TILES
     output_dir_path = options['output_dir_path']
     vrt_file_path = create_vrt_file(options)
     program = "#{python_path} #{gdal2tiles_path} --s_srs epsg:3857 #{vrt_file_path} #{output_dir_path}"
-    puts '$ '+ program.colorize(:blue)
+    print 'run '.colorize(:blue)
+    puts program.colorize(:light_blue)
     x = Open3.popen3(program) do |i, o, e, w|
       o.each_char{ |char| print char }
       e.each_char{ |char| print char }

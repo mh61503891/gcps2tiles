@@ -15,7 +15,7 @@ module GCPS2TILES
     gdal_translate_path = options['gdal_translate_path']
     image_file_path = options['image_file_path']
     vrt_file_path = Tempfile.open(File.basename(image_file_path, File.extname(image_file_path)) + '.vrt'){ |f| f.to_path }
-    program = "#{gdal_translate_path} -of VRT #{  gcps} #{image_file_path} #{vrt_file_path}"
+    program = "#{gdal_translate_path} -of VRT #{gcps} #{image_file_path} #{vrt_file_path}"
     puts '$ '+ program.colorize(:blue)
     status, = systemu(program)
     return vrt_file_path if status.success?

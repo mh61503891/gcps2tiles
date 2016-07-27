@@ -1,3 +1,5 @@
+[![Version](https://img.shields.io/gem/v/gcps2tiles.svg)](https://rubygems.org/gems/gcps2tiles)
+
 # gcps2tiles
 
 A generator of TMS (Tile Map Service) tiles from a image and its GCPs (Ground Control Points).

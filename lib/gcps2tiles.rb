@@ -44,7 +44,7 @@ module GCPS2TILES
     #   which(program)
     # }
 
-    gcreate_tile_files((options)
+    gcreate_tile_files(options)
   end
 
 end
